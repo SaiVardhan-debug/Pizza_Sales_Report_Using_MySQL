@@ -1,4 +1,4 @@
-🍕 # **Pizza_Sales_Report_Using_MySQL**
+🍕 **Pizza_Sales_Report_Using_MySQL**
 
 ---
 
