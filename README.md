@@ -26,81 +26,7 @@ Total Orders → Count of distinct orders
 Average Pizzas per Order → Total pizzas sold ÷ total orders  
 
 ---
-🧾**SQL Analysis**
 
-1️⃣ Total number of orders placed  
-SELECT COUNT(DISTINCT order_id) AS total_orders  
-FROM pizza_sales;
-
----
-
-2️⃣ Total revenue generated from pizza sales  
-SELECT SUM(total_price) AS total_revenue  
-FROM pizza_sales;
-
----
-
-3️⃣ Identify the highest-priced pizza  
-SELECT pizza_name, MAX(total_price) AS highest_price  
-FROM pizza_sales;
-
----
-
-4️⃣ Identify the most common pizza size ordered  
-SELECT pizza_size, COUNT(pizza_size) AS size_count  
-FROM pizza_sales  
-GROUP BY pizza_size  
-ORDER BY size_count DESC  
-LIMIT 1;  
-
----
-
-5️⃣ Top 5 most ordered pizza types with quantities  
-SELECT pizza_name, SUM(quantity) AS total_quantity  
-FROM pizza_sales  
-GROUP BY pizza_name  
-ORDER BY total_quantity DESC  
-LIMIT 5;  
-
----
-
-6️⃣ Total quantity of each pizza category ordered  
-SELECT pizza_category, SUM(quantity) AS total_quantity  
-FROM pizza_sales  
-GROUP BY pizza_category;  
-
----
-
-7️⃣ Distribution of orders by hour of the day  
-SELECT HOUR(order_time) AS order_hour,  
-       COUNT(DISTINCT order_id) AS total_orders  
-FROM pizza_sales  
-GROUP BY HOUR(order_time)  
-ORDER BY order_hour;  
-
----
-
-8️⃣ Category-wise distribution of pizzas  
-SELECT pizza_category, COUNT(pizza_name) AS pizza_count  
-FROM pizza_sales  
-GROUP BY pizza_category;  
-
----
-
-9️⃣ Average number of pizzas ordered per day  
-SELECT ROUND(SUM(quantity) / COUNT(DISTINCT order_date), 2) AS avg_pizzas_per_day  
-FROM pizza_sales;  
-
----
-
-🔟 Top 3 most ordered pizza types by revenue  
-SELECT pizza_name, SUM(total_price) AS revenue  
-FROM pizza_sales  
-GROUP BY pizza_name  
-ORDER BY revenue DESC  
-LIMIT 3;  
-
----
 💡 **Key Insights**  
 Evening hours showed the highest pizza sales volume.  
 Medium-sized pizzas contributed the most to total sales.  
@@ -124,3 +50,8 @@ Peak sales hours provide insights for staffing and inventory optimization.
 Identifying low-performing pizzas helps refine the menu and reduce waste.  
 
 Overall, this project highlights the importance of data-driven decision making in the food and beverage industry.  
+
+---
+**PDF Link**
+
+[Pizza Sales Report.pdf](https://github.com/user-attachments/files/22336154/Pizza.Sales.Report.pdf)
